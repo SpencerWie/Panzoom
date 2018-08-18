@@ -1,15 +1,21 @@
 // Inital method to call to apply PanZoom to elements given a selector
-function PanZoom(selector, minScale = 0.1, maxScale = 5, increment = 0.1) {
+function PanZoom(selector, opts) {
+  opts = opts || {};
+  let minScale = (opts.minScale ? opts.minScale : 0.1);
+  let maxScale = (opts.maxScale ? opts.maxScale : 5);
+  let increment = (opts.increment ? opts.increment  : 0.05);
+  let liner = (opts.liner ? opts.liner  : false);
   document.querySelectorAll(selector).forEach(function(ele){
-    new AttachPanZoom(ele, minScale, maxScale, increment);
+    new AttachPanZoom(ele, minScale , maxScale, increment, liner);
   });
 }
 
 // Appy PanZoom functionality to a given element, allow user defined zoom min and inc per scroll
-function AttachPanZoom(ele, minScale, maxScale, increment) {
+function AttachPanZoom(ele, minScale, maxScale, increment, liner) {
   this.increment = increment;
   this.minScale = minScale;
-  this.maxScale = minScale;
+  this.maxScale = maxScale;
+  this.liner = liner;
   this.panning = false;
   this.oldX = this.oldY = 0;
   let self = this;
@@ -45,9 +51,10 @@ function AttachPanZoom(ele, minScale, maxScale, increment) {
     let newTrans = this.getTransformMatrix();
     let tranX = x - (ele.width / 2);
     let tranY = y - (ele.height / 2);
-    newTrans.scale += dscale;
-    if(newTrans.scale < this.minScale) 
-      newTrans.scale = this.minScale;
+    dscale = (this.liner ? dscale : dscale * (newTrans.scale)) // scale either liner or non-liner 
+    newTrans.scale += dscale
+    if(newTrans.scale < this.minScale) newTrans.scale = this.minScale;
+    if(newTrans.scale > this.maxScale) newTrans.scale = this.maxScale;
     this.applyTranslate(tranX, tranY);
     this.setTransformMatrix(newTrans);
     this.applyTranslate(-(tranX * dscale), -(tranY * dscale));
