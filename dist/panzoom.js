@@ -52,12 +52,15 @@ function AttachPanZoom(ele, minScale, maxScale, increment, liner) {
     let tranX = x - (ele.width / 2);
     let tranY = y - (ele.height / 2);
     dscale = (this.liner ? dscale : dscale * (newTrans.scale)) // scale either liner or non-liner 
-    newTrans.scale += dscale
+    newTrans.scale += dscale;
+    let maxOrMinScale = (newTrans.scale <= this.minScale || newTrans.scale >= this.maxScale);
     if(newTrans.scale < this.minScale) newTrans.scale = this.minScale;
     if(newTrans.scale > this.maxScale) newTrans.scale = this.maxScale;
-    this.applyTranslate(tranX, tranY);
-    this.setTransformMatrix(newTrans);
-    this.applyTranslate(-(tranX * dscale), -(tranY * dscale));
+    if(!maxOrMinScale) {
+      this.applyTranslate(tranX, tranY);
+      this.setTransformMatrix(newTrans);
+      this.applyTranslate(-(tranX * dscale), -(tranY * dscale));
+    }
   }
 
   // Capture when the mouse is down on the element or not
@@ -82,7 +85,7 @@ function AttachPanZoom(ele, minScale, maxScale, increment, liner) {
   });
 
   this.getScrollDirection = function(e){
-    var delta = (e.wheelDelta? e.wheelDelta : e.deltaY* -1)
+    let delta = (e.wheelDelta? e.wheelDelta : e.deltaY * -1);
     if(delta < 0)
       self.applyScale(-self.increment, e.offsetX, e.offsetY)
     else
