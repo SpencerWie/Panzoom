@@ -1,0 +1,21 @@
+.imageContainer {
+  display:inline-block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #808080;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: lightgrey;
+  overflow:hidden;
+  min-height: 100% 
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
