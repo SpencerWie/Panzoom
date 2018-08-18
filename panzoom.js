@@ -6,7 +6,7 @@ function PanZoom(selector, minScale = 0.1, maxScale = 5, increment = 0.1) {
 }
 
 // Appy PanZoom functionality to a given element, allow user defined zoom min and inc per scroll
-function AttachPanZoom(ele, minScale, increment) {
+function AttachPanZoom(ele, minScale, maxScale, increment) {
   this.increment = increment;
   this.minScale = minScale;
   this.maxScale = minScale;
