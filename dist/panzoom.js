@@ -17,10 +17,10 @@ function AttachPanZoom(ele, minScale, maxScale, increment) {
   
   // Gets the current Scale, along with transX and transY
   this.getTransformMatrix = function() {
-    trans = ele.style.transform;
+    let trans = ele.style.transform;
     let start = trans.indexOf("(") + 1;
     let end = trans.indexOf(")");
-    matrix = trans.slice(start, end).split(",");
+    let matrix = trans.slice(start, end).split(",");
     return { 
       "scale": +matrix[0], 
       "transX": +matrix[4], 
@@ -75,7 +75,7 @@ function AttachPanZoom(ele, minScale, maxScale, increment) {
   });
 
   this.getScrollDirection = function(e){
-    var delta = (event.wheelDelta? event.wheelDelta : event.deltaY* -1)
+    var delta = (e.wheelDelta? e.wheelDelta : e.deltaY* -1)
     if(delta < 0)
       self.applyScale(-self.increment, e.offsetX, e.offsetY)
     else
