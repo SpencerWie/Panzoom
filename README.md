@@ -36,7 +36,7 @@ The second parameter takes an object which can be used to customize the settings
 * **minScale**&nbsp;&nbsp;&nbsp;[`Number | default = 0.1`]: The smallest value an image can be zoomed into.
 * **maxScale**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[`Number | default = 5`]: The largest value an image can be zoomed into. 
 * **increment**[`Number | default = 0.05`]: How much to zoom on an image on each zoom event. 
-* **liner**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[`Boolean | default = false`]: Whether to zoom linearly or non-lineraly when using _increment_. Non-linery scales more the close you are the the iamge and less the further away you are.
+* **liner**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[`Boolean | default = false`]: Whether to zoom linearly or non-lineraly when using _increment_. Non-linery scales more the closer you are the the image and less when further away.
 
 An example of using custom settings:
 
