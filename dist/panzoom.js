@@ -1,13 +1,17 @@
 // Inital method to call to apply PanZoom to elements given a selector
 function PanZoom(selector, opts) {
+  let panZoomEles = []
   opts = opts || {};
   let minScale = (opts.minScale ? opts.minScale : 0.1);
   let maxScale = (opts.maxScale ? opts.maxScale : 5);
   let increment = (opts.increment ? opts.increment  : 0.05);
   let liner = (opts.liner ? opts.liner  : false);
   document.querySelectorAll(selector).forEach(function(ele){
-    new AttachPanZoom(ele, minScale , maxScale, increment, liner);
+    panZoomEles.push(new AttachPanZoom(ele, minScale , maxScale, increment, liner));
   });
+  if(panZoomEles.length == 1)
+    return panZoomEles[0];
+  return panZoomEles;  
 }
 
 // Appy PanZoom functionality to a given element, allow user defined zoom min and inc per scroll
