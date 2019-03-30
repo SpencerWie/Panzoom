@@ -53,8 +53,10 @@ function AttachPanZoom(ele, minScale, maxScale, increment, liner) {
   // Applying Deltas to Scale and Translate transformations
   this.applyScale = function(dscale, x, y){
     let newTrans = this.getTransformMatrix();
-    let tranX = x - (ele.width / 2);
-    let tranY = y - (ele.height / 2);
+    let width = ele.width ? ele.width : ele.offsetWidth;
+    let height = ele.height ? ele.height : ele.offsetHeight;
+    let tranX = x - (width / 2);
+    let tranY = y - (height / 2);
     dscale = (this.liner ? dscale : dscale * (newTrans.scale)) // scale either liner or non-liner 
     newTrans.scale += dscale;
     let maxOrMinScale = (newTrans.scale <= this.minScale || newTrans.scale >= this.maxScale);
