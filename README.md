@@ -46,3 +46,4 @@ An example of using custom settings:
 
 * [Demo using HTML 5 Canvas](https://cdn.rawgit.com/SpencerWie/Panzoom/b070fa28/demo/CanvasExample/index.html)
 * [Demo using SVG Image](https://cdn.rawgit.com/SpencerWie/Panzoom/b070fa28/demo/SvgExample/index.html)
+* [Demo using DIV Tag](https://rawcdn.githack.com/SpencerWie/Panzoom/b793c3b0f76a190f55f62108b6676147b3452b5f/demo/DivExample/index.html)
