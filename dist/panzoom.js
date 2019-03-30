@@ -11,7 +11,7 @@ function PanZoom(selector, opts) {
   });
   if(panZoomEles.length == 1)
     return panZoomEles[0];
-  return panZoomEles;  
+  return panZoomEles;
 }
 
 // Appy PanZoom functionality to a given element, allow user defined zoom min and inc per scroll
@@ -91,7 +91,7 @@ function AttachPanZoom(ele, minScale, maxScale, increment, liner) {
   });
 
   this.getScrollDirection = function(e){
-    let delta = (e.wheelDelta? e.wheelDelta : e.deltaY * -1);
+    var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
     if(delta < 0)
       self.applyScale(-self.increment, e.offsetX, e.offsetY)
     else
