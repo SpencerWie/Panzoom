@@ -3,9 +3,9 @@ PanZoom is a lightweight native JavaScript library for panning and zooming eleme
 
 ## Installation
 
-You can grab the latest version by linking to CDN:
+You can grab the latest version by linking raw file directly:
 
-    <script src="https://cdn.rawgit.com/SpencerWie/Panzoom/1cc9755f/dist/panzoom.min.js"></script>
+    <script src="https://raw.githubusercontent.com/SpencerWie/Panzoom/master/dist/panzoom.min.js"></script>
 
 Or clone this Repository and link to the code:
 
