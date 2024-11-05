@@ -1,5 +1,5 @@
 # PanZoom
-PanZoom is a lightweight native JavaScript library for panning and zooming elements using CSS3 Transformations. It's built to have a small footprint and be and simple to use.
+PanZoom is a lightweight native JavaScript library for panning and zooming elements using CSS3 Transformations. It's built to have a small footprint and be simple to use.
 
 ## Installation
 
