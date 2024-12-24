@@ -44,6 +44,6 @@ An example of using custom settings:
 
 ## Demos
 
-* [Demo using HTML 5 Canvas](https://rawcdn.githack.com/SpencerWie/Panzoom/fe4fb6af7595c4db3c1489a82884a6d1cdbbd4f6/demo/CanvasExample/index.html)
-* [Demo using SVG Image](https://rawcdn.githack.com/SpencerWie/Panzoom/fe4fb6af7595c4db3c1489a82884a6d1cdbbd4f6/demo/SvgExample/index.html)
-* [Demo using DIV Tag](https://rawcdn.githack.com/SpencerWie/Panzoom/b793c3b0f76a190f55f62108b6676147b3452b5f/demo/DivExample/index.html)
+* [Demo using HTML 5 Canvas](https://rawcdn.githack.com/SpencerWie/Panzoom/master/demo/CanvasExample/index.html)
+* [Demo using SVG Image](https://rawcdn.githack.com/SpencerWie/Panzoom/master/demo/SvgExample/index.html)
+* [Demo using DIV Tag](https://rawcdn.githack.com/SpencerWie/Panzoom/master/demo/DivExample/index.html)
