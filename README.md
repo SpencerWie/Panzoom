@@ -7,7 +7,7 @@ You can grab the latest version by linking raw file directly:
 
     <script src="https://raw.githubusercontent.com/SpencerWie/Panzoom/master/dist/panzoom.min.js"></script>
 
-Or clone this Repository and link to the code:
+Or clone this repository and link to the code:
 
     <script src="path/to/repo/dist/panzoom.min.js"></script>
 
